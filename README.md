@@ -56,3 +56,4 @@ Because this application relies natively on client-side compilation systems buil
 
 1. Clone this repository to your desktop machine.
 2. Launch the application by opening `index.html` in any modern desktop web browser.
+3. or visit `https://fooddelivery-sigma-azure.vercel.app/` for live view
