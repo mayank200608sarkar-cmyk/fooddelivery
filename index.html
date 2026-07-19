@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craving — Modern Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <div class="brand-logo">Craving<span>.</span></div>
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content App Canvas Container -->
+        <main class="app-content-canvas">
+
+            <!-- 1. HOME VIEW (Visible by Default) -->
+            <section id="view-home" class="app-view active">
+                <!-- Search Area -->
+                <div class="search-wrapper">
+                    <svg class="search-icon-inline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="text" class="search-input" placeholder="Search gourmet burgers, sides...">
+                </div>
+
+                <h2 class="section-title">Popular Items</h2>
+                <div class="food-grid">
+                    <div class="food-card">
+                        <div class="food-image-placeholder">🍔</div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Trident Smash Burger</h3>
+                                <p class="food-meta">420 kcal • Fast Food</p>
+                            </div>
+                            <div class="food-footer">
+                                <span class="food-price">$8.49</span>
+                                <button class="add-to-cart-btn" id="atc2" aria-label="Add to cart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <div class="food-image-placeholder">🍟</div>
+                        <div class="food-info">
+                            <div>
+                                <h3 class="food-title">Truffle Sea-Salt Fries</h3>
+                                <p class="food-meta">280 kcal • Sides</p>
+                            </div>
+                            <div class="food-footer">
+                                <span class="food-price">$4.19</span>
+                                <button class="add-to-cart-btn" id="atc1" aria-label="Add to cart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. CART VIEW -->
+            <section id="view-cart" class="app-view">
+                <h2 class="section-title">Your Basket</h2>
+                <div class="empty-state-card">
+                    <span class="empty-icon">🛒</span>
+                    <h3 id="af">Your cart is empty</h3>
+                    <p id="addedfood">Add delicious items from the main menu to kickstart your delivery order.</p>
+                    <h2 id="burgers"></h2>
+                    <h2 id="fries"></h2>
+                    <h1 id="total"></h1><br><br> 
+                    <button id="pay_now" style="font-size: 25px;">pay now</button>
+                    <h2 id="statuspay" style="display: none;"></h2>
+                </div>
+            </section>
+
+            <!-- 3. DELIVERY STATUS VIEW -->
+            <section id="view-status" class="app-view">
+                <h2 class="section-title">Track Order</h2>
+                <div class="empty-state-card">
+                    <span class="empty-icon">🛵</span>
+                    <h3>No active deliveries</h3>
+                    <p>Once you place an order, you can monitor live milestone tracking updates right here.</p>
+                </div>
+            </section>
+
+            <!-- 4. USER ACCOUNT VIEW -->
+            <section id="view-account" class="app-view">
+                <h2 class="section-title">Profile Account</h2>
+                <div class="empty-state-card">
+                    <span class="empty-icon">👤</span>
+                    <h3 id="user-name"></h3>
+                    <div id="main1">
+                        <form  id="user">
+                            <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="enter your name" style="border-radius: 20px; border: 1px solid black; "required><br><br>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" style="border-radius: 20px; border: 1px solid black; "required><br><br>
+                        <button type="submit 
+                        " id="submit">Submit</button>
+
+                        </form>
+                        
+                        <p id="vie" style="text-transform: capitalize; font-size: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></p><hr><br><br>
+                        <h2>Your Current balance</h2>
+                        <p id="balance" style="font-size: 30px; font-weight: bolder;"></p>
+
+                    </div>
+                    
+
+                    
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Floating Bottom Navigation Bar -->
+        <div class="navigation-bar-container">
+            <nav class="bottom-nav">
+                <button class="nav-item active" data-view="home">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Home</span>
+                </button>
+
+                <button class="nav-item" data-view="cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                    <span>Cart</span>
+                </button>
+
+                <button class="nav-item" data-view="status">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <span>Status</span>
+                </button>
+
+                <button class="nav-item" data-view="account">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Account</span>
+                </button>
+            </nav>
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.nav-item');
+    const appViews = document.querySelectorAll('.app-view');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Get the view keyword from clicked node ('home', 'cart', etc.)
+            const targetView = item.getAttribute('data-view');
+
+            // 1. Manage Active State Class Updates on Nav Items
+            document.querySelector('.nav-item.active')?.classList.remove('active');
+            item.classList.add('active');
+
+            // 2. Cleanly route content visibility 
+            appViews.forEach(view => {
+                // If view id matches target word (e.g. "view-cart"), reveal it
+                if (view.id === `view-${targetView}`) {
+                    view.classList.add('active');
+                } else {
+                    view.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Simple Theme Toggle Trigger Example (Dark / Light Theme Core Hook)
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn?.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+    });
+});
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>
